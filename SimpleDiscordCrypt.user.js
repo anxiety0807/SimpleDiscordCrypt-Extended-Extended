@@ -2065,7 +2065,7 @@ function Init(final)
                 message: {
                     channelId: channelId,
                     nonce: this.GetNonce(),
-                    content: "```ml\n-----SYSTEM MESSAGE-----\n```" + sysmsg + "\n`𝘚𝘪𝘮𝘱𝘭𝘦𝘋𝘪𝘴𝘤𝘰𝘳𝘥𝘊𝘳𝘺𝘱𝘵` ```yaml\n𝘚𝘪𝘮𝘱𝘭𝘦𝘋𝘪𝘴𝘤𝘰𝘳𝘥𝘊𝘳𝘺𝘱𝘵\n```"
+                    content: "```ml\n-----SYSTEM MESSAGE-----\n```" + sysmsg + "\n`𝘚𝘋𝘊𝘌𝘌` ```yaml\n𝘚𝘋𝘊𝘌𝘌\n```"
                 }
             }, () => { /*TODO*/ });
         },
@@ -2725,7 +2725,7 @@ async function handleUpdate(event) {
     let message = event.message;
     if(message.content == null && message.embeds != null && message.embeds.length === 1) {
         let embed = message.embeds[0];
-        if(embed.footer != null && (embed.footer.text === "SimpleDiscordCrypt" || embed.footer.text === "𝘚𝘪𝘮𝘱𝘭𝘦𝘋𝘪𝘴𝘤𝘰𝘳𝘥𝘊𝘳𝘺𝘱𝘵")) {
+        if(embed.footer != null && (embed.footer.text === "SDCEE" || embed.footer.text === "𝘚𝘋𝘊𝘌𝘌")) {
             return; //ignore embed-only updates
         }
     }
@@ -2734,8 +2734,8 @@ async function handleUpdate(event) {
         return await Discord.original_dispatch.apply(this, arguments);
 }
 
-const messageRegex = /^([⠀-⣿]{16,}) `(?:SimpleDiscordCrypt|𝘚𝘪𝘮𝘱𝘭𝘦𝘋𝘪𝘴𝘤𝘰𝘳𝘥𝘊𝘳𝘺𝘱𝘵)`$/;
-const systemMessageRegex = /^```(?:\w*\n)?-----SYSTEM MESSAGE-----\n?```\s*(.*?)\s*```(?:\w*\n)?(?:𝘚𝘪𝘮𝘱𝘭𝘦𝘋𝘪𝘴𝘤𝘰𝘳𝘥𝘊𝘳𝘺𝘱𝘵|SimpleDiscordCrypt)\n?```$/s;
+const messageRegex = /^([⠀-⣿]{16,}) `(?:SDCEE|𝘚𝘋𝘊𝘌𝘌)`$/;
+const systemMessageRegex = /^```(?:\w*\n)?-----SYSTEM MESSAGE-----\n?```\s*(.*?)\s*```(?:\w*\n)?(?:𝘚𝘋𝘊𝘌𝘌|SDCEE)\n?```$/s;
 const unknownKeyMessage = "```fix\n-----ENCRYPTED MESSAGE WITH UNKNOWN KEY-----\n```";
 const invalidMessage = "```diff\n-⁣----ENCRYPTED MESSAGE WITH UNKNOWN FORMAT-----\n```"; //invisible separator after the first '-'
 async function processMessage(message, ignoreAttachments) {
@@ -3564,7 +3564,7 @@ const descriptionRegex = /^[⠀-⣿]{16,}$/;
 async function processEmbeds(message, ignoreAttachments) {
     if(message.embeds == null || message.embeds.length !== 1) return;
     let embed = message.embeds[0];
-    if(embed.footer == null || (embed.footer.text !== "SimpleDiscordCrypt" && embed.footer.text !== "𝘚𝘪𝘮𝘱𝘭𝘦𝘋𝘪𝘴𝘤𝘰𝘳𝘥𝘊𝘳𝘺𝘱𝘵")) return;
+    if(embed.footer == null || (embed.footer.text !== "SDCEE" && embed.footer.text !== "𝘚𝘋𝘊𝘌𝘌")) return;
 
     if(embed.author == null) return;
 
@@ -3639,7 +3639,7 @@ async function handleSend(channelId, message, forceSimple) {
 
     let channel = Discord.getChannel(channelId);
     if(forceSimple || Cache.channelBlacklist === 2 || (channel.type === 0 && !Utils.Can(EMBED_LINKS_CHECK, Discord.getCurrentUser(), channel))) {
-       message.content = payload + " `𝘚𝘪𝘮𝘱𝘭𝘦𝘋𝘪𝘴𝘤𝘰𝘳𝘥𝘊𝘳𝘺𝘱𝘵`";
+       message.content = payload + " `𝘚𝘋𝘊𝘌𝘌`";
     }
     else {
         message.content = "";
@@ -3647,13 +3647,13 @@ async function handleSend(channelId, message, forceSimple) {
             color: BaseColorInt,
             author: {
                 name: "-----ENCRYPTED MESSAGE-----",
-                icon_url: "https://raw.githubusercontent.com/Ceiridge/SimpleDiscordCrypt-Extended/master/images/internalkey64.png",
-                url: "https://github.com/Ceiridge/SimpleDiscordCrypt-Extended"
+                icon_url: "https://raw.githubusercontent.com/anxiety0807/SimpleDiscordCrypt-Extended-Extended/master/images/internalkey64.png",
+                url: "https://github.com/anxiety0807/SimpleDiscordCrypt-Extended-Extended"
             },
             description: payload,
             footer: {
-                text: "𝘚𝘪𝘮𝘱𝘭𝘦𝘋𝘪𝘴𝘤𝘰𝘳𝘥𝘊𝘳𝘺𝘱𝘵",
-                icon_url: "https://raw.githubusercontent.com/Ceiridge/SimpleDiscordCrypt-Extended/master/logo.png",
+                text: "𝘚𝘋𝘊𝘌𝘌",
+                icon_url: "https://raw.githubusercontent.com/anxiety0807/SimpleDiscordCrypt-Extended-Extended/master/logo.png",
             }
         };
     }
