@@ -3067,7 +3067,7 @@ function embedEncrypted(message, url, queryString) {
         message.embeds.push({
             type: 'video',
             url,
-            thumbnail: { url: "https://raw.githubusercontent.com/Ceiridge/SimpleDiscordCrypt-Extended/master/images/key128.png", width: 128, height: 128 },
+            thumbnail: { url: "https://raw.githubusercontent.com/anxiety0807/SimpleDiscordCrypt-Extended-Extended/master/images/key128.png", width: 128, height: 128 },
             video: { url, width: 400, height: 300 }
         });
     }
