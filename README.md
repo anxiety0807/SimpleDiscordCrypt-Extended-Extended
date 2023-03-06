@@ -1,6 +1,6 @@
 <h1 align="center">
     <img src="https://github.com/anxiety0807/SimpleDiscordCrypt-Extended-Extended/raw/master/logo.png" height="50" width="50">
-    SimpleDiscordCrypt Extended
+    SimpleDiscordCrypt Extended Extended
 </h1>
 
 Discord message end-to-end client side encryption plugin with automatic key exchange. Also runs without BetterDiscord.<br>
