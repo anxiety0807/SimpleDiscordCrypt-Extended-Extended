@@ -25,6 +25,13 @@ $discordCanaryIconPath = $startMenuPath+'Discord Canary.lnk'
 $discordCanaryDesktopIconPath = $desktopPath+'Discord Canary.lnk'
 $discordCanaryTaskbarIconPath = $taskbarPath+'Discord Canary.lnk'
 $discordCanaryExeName = 'DiscordCanary.exe'
+$discordDevelopmentPath = $env:LOCALAPPDATA+'\DiscordDevelopment'
+$discordDevelopmentDataPath = $env:APPDATA+'\discordDevelopment'
+$discordDevelopmentResourcesPath = $discordDevelopmentPath+'\app-*'
+$discordDevelopmentIconPath = $startMenuPath+'Discord Development.lnk'
+$discordDevelopmentDesktopIconPath = $desktopPath+'Discord Development.lnk'
+$discordDevelopmentTaskbarIconPath = $taskbarPath+'Discord Development.lnk'
+$discordDevelopmentExeName = 'DiscordDevelopment.exe'
 $iconLocation = '\app.ico,0'
 $pluginPath = $env:LOCALAPPDATA+'\SimpleDiscordCrypt'
 $startupRegistry = 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Run'
@@ -125,6 +132,21 @@ while(Test-Path $discordCanaryPath) {
 	RootElectron $discordCanaryIconPath $discordCanaryExeName $discordCanaryPath $discordCanaryResourcesPath $discordCanaryDesktopIconPath $discordCanaryTaskbarIconPath
 	
 	ReplaceStartup 'DiscordCanary' $discordCanaryIconPath
+
+	$install = $true
+	break
+}
+
+while(Test-Path $discordDevelopmentPath) {
+	'DiscordDevelopment found'
+	if(Test-Path $discordDevelopmentDataPath) { 'data directory found' } else { 'data directory not found'; break }
+	if(Test-Path $discordDevelopmentResourcesPath) { 'resources directory found' } else { 'resources directory not found'; break }
+
+	RemoveExtension $discordDevelopmentDataPath
+
+	RootElectron $discordDevelopmentIconPath $discordDevelopmentExeName $discordDevelopmentPath $discordDevelopmentResourcesPath $discordDevelopmentDesktopIconPath $discordDevelopmentTaskbarIconPath
+	
+	ReplaceStartup 'DiscordDevelopment' $discordDevelopmentIconPath
 
 	$install = $true
 	break
@@ -320,15 +342,19 @@ if (requireGrab != null) {
 
     $discordCanaryProcesses = Get-Process 'DiscordCanary' -ErrorAction SilentlyContinue
     $discordCanaryProcesses | % { $needsWait = $_.CloseMainWindow() -or $needsWait }
+    
+    $discordDevelopmentProcesses = Get-Process 'DiscordDevelopment' -ErrorAction SilentlyContinue
+    $discordDevelopmentProcesses | % { $needsWait = $_.CloseMainWindow() -or $needsWait }
 
     if($needsWait) { sleep 1 }
 
-    $processes = ($discordProcesses + $discordPtbProcesses + $discordCanaryProcesses)
+    $processes = ($discordProcesses + $discordPtbProcesses + $discordCanaryProcesses + $discordDevelopmentProcesses)
     if($processes.Length -ne 0) {
         $processes | Stop-Process
         if($discordProcesses.Length -ne 0) { [void](start $discordIconPath)  }
         if($discordPtbProcesses.Length -ne 0) { [void](start $discordPtbIconPath)  }
         if($discordCanaryProcesses.Length -ne 0) { [void](start $discordCanaryIconPath)  }
+	if($discordDevelopmentProcesses.Length -ne 0) { [void](start $discordDevelopmentIconPath)  }
     }
 }
 else { 'Discord not found' }
