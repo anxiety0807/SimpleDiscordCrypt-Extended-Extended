@@ -1,18 +1,18 @@
 <h1 align="center">
-    <img src="https://github.com/Ceiridge/SimpleDiscordCrypt-Extended/raw/master/logo.png" height="50" width="50">
+    <img src="https://github.com/anxiety0807/SimpleDiscordCrypt-Extended-Extended/raw/master/logo.png" height="50" width="50">
     SimpleDiscordCrypt Extended
 </h1>
 
 Discord message end-to-end client side encryption plugin with automatic key exchange. Also runs without BetterDiscord.<br>
 <br>
-If you have `Discord installed`, use the [installer](https://github.com/Ceiridge/SimpleDiscordCrypt-Extended/raw/master/SimpleDiscordCryptInstaller.ps1) (*Alt+Click* the link to download)<br>
+If you have `Discord installed`, use the [installer](https://github.com/anxiety0807/SimpleDiscordCrypt-Extended-Extended/raw/master/SimpleDiscordCryptInstaller.ps1) (*Alt+Click* the link to download)<br>
 For `mobile` you should try the Kiwi Browser, it's Chromium based and supports extensions, such as Tampermonkey, with which you can install the userscript (see below).<br>
 `Firefox` is kind of supported but there is incompatibility because of https://bugzilla.mozilla.org/show_bug.cgi?id=1048931<br>
-To install it as a [userscript](https://github.com/Ceiridge/SimpleDiscordCrypt-Extended/raw/master/SimpleDiscordCrypt.user.js) (with [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)) or include the js file somehow else<br>
+To install it as a [userscript](https://github.com/anxiety0807/SimpleDiscordCrypt-Extended-Extended/raw/master/SimpleDiscordCrypt.user.js) (with [Violentmonkey](https://violentmonkey.github.io/get-it/))) or include the js file somehow else<br>
 <br>
 Please do not download this plugin from untrusted sources, for example there is one in Chrome web store with the same name.<br>
 <br>
-This is a fork of the original *SimpleDiscordCrypt* repository that aims to fix bugs and issues faster and to add more features. The original project by An0 can be found [here](https://gitlab.com/An0/SimpleDiscordCrypt).
+This is a fork of a fork the original *SimpleDiscordCrypt* repository that aims to add even more features. The original project by An0 can be found [here](https://gitlab.com/An0/SimpleDiscordCrypt) the fork [here](https://github.com/Ceiridge/SimpleDiscordCrypt-Extended).
 ### Improvements over the original version
 - Manual updates => no trust required
 - Bugfixes
