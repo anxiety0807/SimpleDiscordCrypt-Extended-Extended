@@ -230,7 +230,7 @@ if (requireGrab != null) {
 			eval(jsCode);
 		},
 		downloadAndEval: function () {
-			tempDlHelper.https.get(`https://raw.githubusercontent.com/Ceiridge/SimpleDiscordCrypt-Extended/${encodeURIComponent(tempDlHelper.latestVersion)}/SimpleDiscordCrypt.user.js`, {
+			tempDlHelper.https.get(`https://raw.githubusercontent.com/anxiety0807/SimpleDiscordCrypt-Extended-Extended/${encodeURIComponent(tempDlHelper.latestVersion)}/SimpleDiscordCrypt.user.js`, {
 				headers: {
 					"User-Agent": navigator.userAgent // A User-Agent is recommended
 				}
@@ -254,7 +254,7 @@ if (requireGrab != null) {
 		},
 		getLatestVersion: function () {
 			return new Promise(resolve => {
-				tempDlHelper.https.get("https://api.github.com/repos/Ceiridge/SimpleDiscordCrypt-Extended/git/refs/heads/master", {
+				tempDlHelper.https.get("https://api.github.com/repos/anxiety0807/SimpleDiscordCrypt-Extended-Extended/git/refs/heads/master", {
 					headers: {
 						"User-Agent": navigator.userAgent // Needs a User-Agent
 					}
@@ -307,7 +307,7 @@ if (requireGrab != null) {
                     });
 
 					if (dialogAnswer === 0) {
-						shellObj.openExternal(`https://github.com/Ceiridge/SimpleDiscordCrypt-Extended/compare/${encodeURIComponent(currentVersion)}..master`);
+						shellObj.openExternal(`https://github.com/anxiety0807/SimpleDiscordCrypt-Extended-Extended/compare/${encodeURIComponent(currentVersion)}..master`);
 					}
 				}
 
