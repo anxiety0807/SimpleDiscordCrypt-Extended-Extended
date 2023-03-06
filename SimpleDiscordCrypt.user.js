@@ -1,13 +1,13 @@
 // ==UserScript==
-// @name         SimpleDiscordCrypt Extended
-// @namespace    https://github.com/Ceiridge/SimpleDiscordCrypt-Extended
+// @name         SimpleDiscordCrypt Extended Extended
+// @namespace    https://github.com/anxiety0807/SimpleDiscordCrypt-Extended-Extended
 // @version      1.9.1.3
 // @description  I hope people won't start calling this SDC ^_^
 // @author       An0, leogx9r, Ceiridge
 // @license      LGPLv3 - https://www.gnu.org/licenses/lgpl-3.0.txt
-// @downloadURL  https://raw.githubusercontent.com/Ceiridge/SimpleDiscordCrypt-Extended/master/SimpleDiscordCrypt.user.js
-// @updateURL    https://raw.githubusercontent.com/Ceiridge/SimpleDiscordCrypt-Extended/master/SimpleDiscordCrypt.meta.js
-// @icon         https://raw.githubusercontent.com/Ceiridge/SimpleDiscordCrypt-Extended/master/logo.png
+// @downloadURL  https://raw.githubusercontent.com/anxiety0807/SimpleDiscordCrypt-Extended-Extended/master/SimpleDiscordCrypt.user.js
+// @updateURL    https://raw.githubusercontent.com/anxiety0807/SimpleDiscordCrypt-Extended-Extended/master/SimpleDiscordCrypt.meta.js
+// @icon         https://raw.githubusercontent.com/anxiety0807/SimpleDiscordCrypt-Extended-Extended/master/logo.png
 // @match        https://*.discord.com/channels/*
 // @match        https://*.discord.com/activity
 // @match        https://*.discord.com/login*
